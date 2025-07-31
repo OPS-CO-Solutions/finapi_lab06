@@ -27,7 +27,7 @@ def run_test(name, method, url, check_fn):
     except Exception as e:
         duration = time.time() - start
         status_code = response.status_code if 'response' in locals() else 0
-        log_result(name, "fail", url, method, duration, status_code, "Response Timeout" if isinstance(e, requests.Timeout) else str(e))
+        log_result(name, "fail", url, method, duration, status_code, str(e))
         raise
 
 # ----- Actual tests below -----
@@ -38,7 +38,7 @@ def test_home():
         method="GET",
         url=f"{BASE_URL}/",
         check_fn=lambda r: (
-            assert_status(r, 300),
+            assert_status(r, 200),
             assert_in_text(r, "Flask")
         )
     )
