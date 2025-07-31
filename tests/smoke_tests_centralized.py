@@ -25,6 +25,7 @@ def run_test(name, method, url, check_fn):
         check_fn(response)
         log_result(name, "pass", url, method, duration, response.status_code)
     except Exception as e:
+        duration = time.time() - start
         status_code = response.status_code if 'response' in locals() else 0
         log_result(name, "fail", url, method, duration, status_code, "Response Timeout" if isinstance(e, requests.Timeout) else str(e))
         raise
