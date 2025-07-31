@@ -5,7 +5,7 @@ pool:
 
 variables:
   - name: projectName
-    value: 'Training-Solution-Lab05'              # <-- Update this
+    value: 'Training-Solution-lab06'              # <-- Update this
   - name: buildPipelineName
     value: 'finapi_build'       # <-- Update this
   - name: artifactName
@@ -13,9 +13,9 @@ variables:
   - name: targetFile
     value: 'app.py'                               # Optional: Which file inside artifact to display
   - name: resourceGroup
-    value: 'Training-Solution-Lab05'          # <-- Update this
+    value: 'Training-Solution-lab06'          # <-- Update this
   - name: webAppName
-    value: 'finapi-solution-lab05'                  # <-- Update this Azure Web App target
+    value: 'finapi-solution-lab06'                  # <-- Update this Azure Web App target
 
 steps:
 - script: |
