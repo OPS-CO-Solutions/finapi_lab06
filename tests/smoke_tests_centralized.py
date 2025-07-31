@@ -38,7 +38,7 @@ def test_home():
         method="GET",
         url=f"{BASE_URL}/",
         check_fn=lambda r: (
-            assert_status(r, 200),
+            assert_status(r, 300),
             assert_in_text(r, "Flask")
         )
     )
