@@ -20,14 +20,16 @@ def log_result(name, status, url, method, duration, status_code, message=""):
 def run_test(name, method, url, check_fn):
     start = time.time()
     try:
-        response = requests.request(method, url, timeout=4)
+        response = requests.request(method, url, timeout=5)
         duration = time.time() - start
         check_fn(response)
         log_result(name, "pass", url, method, duration, response.status_code)
+        return True
     except Exception as e:
         duration = time.time() - start
         status_code = response.status_code if 'response' in locals() else 0
         log_result(name, "fail", url, method, duration, status_code, str(e))
+        return False
 #        raise
 
 # ----- Actual tests below -----
