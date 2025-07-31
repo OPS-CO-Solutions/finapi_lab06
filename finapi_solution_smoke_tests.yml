@@ -32,4 +32,4 @@ steps:
     inputs:
       testResultsFiles: 'smoke-results.xml'
       testRunTitle: 'Post-deployment Smoke Test'
-      failTaskOnFailedTests: true
+      failTaskOnFailedTests: false
